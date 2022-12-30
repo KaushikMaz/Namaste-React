@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <div id="root">
+        <h1>Namaste javascript</h1>
+        <h2>Namaste Kaushik </h2>
+    </div>
+    <script>
+        const root=document.getElementById("root")
+        const heading=document.createElement("h1");
+        heading.innerHTML="Namaste React"
+        root.appendChild(heading)
+
+    </script>
+    <script crossorigin src="https://unpkg.com/react@18/umd/react.production.min.js"></script>
+    <script crossorigin src="https://unpkg.com/react-dom@18/umd/react-dom.production.min.js"></script>
+    <script>
+        const headingNew=React.createElement("h1",{},"Namaste Akshay Saini")
+        const heading2=React.createElement("h2",{},"Namaste Sreenu Saini")
+        const container=React.createElement("div",{id:"container"},[headingNew,heading2])
+        const rootNew=ReactDOM.createRoot(document.getElementById("root"));
+        rootNew.render(container)
+    </script>
+</body>
+</html>

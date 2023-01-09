@@ -1,0 +1,26 @@
+{
+  "name": "namaste-dev",
+  "version": "1.0.0",
+  "description": "This is a react live course",
+  "main": "index.html",
+  "scripts": {
+    "test": "jest"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/KaushikMaz/Namaste-Dev.git"
+  },
+  "author": "Kaushik Mazumdar",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/KaushikMaz/Namaste-Dev/issues"
+  },
+  "homepage": "https://github.com/KaushikMaz/Namaste-Dev#readme",
+  "devDependencies": {
+    "parcel": "^2.8.2"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0"
+  }
+}

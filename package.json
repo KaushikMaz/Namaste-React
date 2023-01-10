@@ -2,7 +2,7 @@
   "name": "namaste-dev",
   "version": "1.0.0",
   "description": "This is a react live course",
-  "main": "App.js",
+  
   "scripts": {
     "test": "jest"
   },

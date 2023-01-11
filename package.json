@@ -6,6 +6,13 @@
   "scripts": {
     "test": "jest"
   },
+  "source": "index.html",
+  "scripts": {
+    "test": "jest",
+    "start": "parcel",
+    "build": "parcel build "
+  }
+
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KaushikMaz/Namaste-Dev.git"

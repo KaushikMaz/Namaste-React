@@ -2,13 +2,11 @@
   "name": "namaste-dev",
   "version": "1.0.0",
   "description": "This is a react live course",
-  
   "scripts": {
-    "start":"parcel index.html",
-    "build":"parcel build index.html",
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
-  
   "repository": {
     "type": "git",
     "url": "git+https://github.com/KaushikMaz/Namaste-Dev.git"
@@ -20,6 +18,7 @@
   },
   "homepage": "https://github.com/KaushikMaz/Namaste-Dev#readme",
   "devDependencies": {
+    "babel-plugin-transform-remove-console": "^6.9.4",
     "parcel": "^2.8.2"
   },
   "dependencies": {

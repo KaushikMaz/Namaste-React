@@ -20,3 +20,30 @@
 
 //    React component
 
+const AppLayout=()=>{
+    return(
+        {
+            /* Header
+                -Logo
+                -Nav Items
+                -Cart
+            Body
+                -Search Bar
+                -Restaurant List
+                -Restaurant Card
+                    -Image
+                    -Name
+                    -Rating
+                    -Cusines
+            Footer
+                -Links
+                -Copyright
+        */
+        })
+
+
+
+
+        }
+    
+

@@ -13,16 +13,6 @@
     const rootNew=ReactDOM.createRoot(document.getElementById("root"));
     rootNew.render(container)
 
-
-    // JSX
-    // React Element
-   const heading3= <h1 id="title" key="h2">Namaste India</h1> 
-
-//    React component
-
-const AppLayout=()=>{
-    return(
-        {
             /* Header
                 -Logo
                 -Nav Items
@@ -39,7 +29,23 @@ const AppLayout=()=>{
                 -Links
                 -Copyright
         */
-        })
+    // JSX
+    // React Element
+   const Title=()=> <h1 id="title" key="h2">Food Villa</h1> 
+   
+
+//    React component
+
+const AppLayout=()=>{
+    return(
+        <div>
+            <Title/>
+            <div className="nav-items">
+                <ul>
+                    <li></li>
+                </ul>
+            </div>
+        </div>)
 
 
 

@@ -3,6 +3,7 @@ A: Emmet is a web development tool that allows you to write HTML and CSS code qu
 
 With Emmet, you can write complex HTML and CSS code using abbreviations that are expanded into full HTML and CSS code. For example, you can type ul>li*5 and it will be expanded into:
 
+```
 <ul>
     <li></li>
     <li></li>
@@ -10,5 +11,3 @@ With Emmet, you can write complex HTML and CSS code using abbreviations that are
     <li></li>
     <li></li>
 </ul>
-```
-```

@@ -12,6 +12,8 @@ With Emmet, you can write complex HTML and CSS code using abbreviations that are
     <li></li>
 </ul>
 
+```
+
 ## Q: Difference between a Library and Framework?
 A: A library and a framework are both collections of code that can be used to simplify the development of software applications, but there are some key differences between them.
 

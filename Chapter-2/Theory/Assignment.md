@@ -1,0 +1,2 @@
+## Q what is "NPM"?
+A: NPM is a package manager for JavaScript that lets developers install, update, and manage third-party packages. It's used to access millions of packages from the public NPM registry, and developers can also publish their own packages to the registry. NPM is widely used in the JavaScript community and is installed on top of Node.js.

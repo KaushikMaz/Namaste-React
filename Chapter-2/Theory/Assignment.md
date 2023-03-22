@@ -61,3 +61,23 @@ A: `5 superpowers of Parcel`:
 * `Minification` - Minification is the process of minimizing code and markup in your web pages and script files.
 * `Image optimization`
 * `Caching while development`
+
+## Q: What is `.gitignore`? What should we `add and not add` into it?
+A:`.gitignore` is a file that is used to specify files and directories that should be ignored by Git when tracking changes in a project. The purpose of `.gitignore` is to prevent unnecessary files from being committed to a repository, which can bloat the repository size and make it harder to manage.
+
+Here are some examples of files and directories that should be added to a `.gitignore` file:
+
+1.Compiled code and build artifacts, such as object files, executables, and DLLs.
+2.Package managers and their files, such as node_modules/ or vendor/ directories.
+3.Log files, backups, and caches.
+4.IDE and editor-specific files and directories, such as .vscode/, .idea/, and .DS_Store.
+5.Configuration files that contain sensitive information, such as API keys or database credentials.
+
+Anything that can be regenerated in the server should be added to `.gitignore`
+
+On the other hand, you should not add the following files to `.gitignore`:
+1.Source code files, which should be tracked by Git.
+2.Documentation files, which should also be tracked by Git.
+3.Configuration files that do not contain sensitive information and are required for the project to function properly.
+4.Files and directories that are required for the project to run, such as assets and data files.
+

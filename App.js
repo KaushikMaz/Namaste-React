@@ -1,4 +1,4 @@
-    import {createElement} from "react";
+    import React,{createElement} from "react";
     import ReactDOM from "react-dom/client";
 
     const root=document.getElementById("root")
@@ -51,5 +51,5 @@ const AppLayout=()=>{
 
 
         }
-    
+rootNew.render(<AppLayout/>)
 

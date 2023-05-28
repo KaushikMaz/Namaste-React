@@ -1,14 +1,24 @@
 import React from "react";
 import ReactDOM from"react-dom/client";
-
-
+export default AppLayout;
+const Logo=()=>{
+    return(
+        <img src="./"/>
+    )
+}
 const Header=()=>{
     return(
-        <img src="/Chapter-4/Images/FoodLogo.jpg"/>
+        <div>
+            <h1>Hi whats up</h1>
+
+        </div>
 
     )
 }
-const Applayout=()=>{
+const AppLayout=()=>{
+    return(
+        <Header/>
+    )
     
  
 }

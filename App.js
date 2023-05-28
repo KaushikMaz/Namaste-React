@@ -12,7 +12,7 @@
     const heading2=createElement("h2",{},"Namaste Sreenu Saini")
     const container=createElement("div",{id:"container"},[headingNew,heading2])
     const rootNew=ReactDOM.createRoot(document.getElementById("root"));
-    rootNew.render(container)
+    // rootNew.render(container)
 
             /* Header
                 -Logo

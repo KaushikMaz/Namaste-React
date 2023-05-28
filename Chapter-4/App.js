@@ -4,7 +4,7 @@ import ReactDOM from"react-dom/client";
 
 const Header=()=>{
     return(
-        <img classsrc="/Main/Images/FoodLogo.jpg"/>
+        <img src="/Chapter-4/Images/FoodLogo.jpg"/>
 
     )
 }

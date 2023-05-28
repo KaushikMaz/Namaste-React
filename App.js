@@ -1,5 +1,6 @@
     import React,{createElement} from "react";
     import ReactDOM from "react-dom/client";
+    import AppLayout from "./Chapter-4/App"
 
     const root=document.getElementById("root")
     const heading=document.createElement("h1");
@@ -31,25 +32,25 @@
         */
     // JSX
     // React Element
-   const Title=()=> <h1 id="title" key="h2">Food Villa</h1> 
+//    const Title=()=> <h1 id="title" key="h2">Food Villa</h1> 
    
 
 //    React component
 
-const AppLayout=()=>{
-    return(
-        <div>
-            <Title/>
-            <div className="nav-items">
-                <ul>
-                    <li></li>
-                </ul>
-            </div>
-        </div>)
+// const AppLayout=()=>{
+//     return(
+//         <div>
+//             <Title/>
+//             <div className="nav-items">
+//                 <ul>
+//                     <li></li>
+//                 </ul>
+//             </div>
+//         </div>)
 
 
 
 
-        }
+//         }
 rootNew.render(<AppLayout/>)
 

@@ -1,6 +1,6 @@
     import React,{createElement} from "react";
     import ReactDOM from "react-dom/client";
-    import AppLayout from "./Chapter-4/App"
+    import AppLayout from "./"
 
     const root=document.getElementById("root")
     const heading=document.createElement("h1");

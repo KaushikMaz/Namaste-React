@@ -1,1 +1,8 @@
 
+*{
+    box-sizing: border-box;
+}
+
+.Logo{
+    width:40px;
+}

@@ -1,8 +1,28 @@
 
 *{
     box-sizing: border-box;
+    margin:0;
 }
 
 .Logo{
-    width:40px;
+    width:100px;
+}
+ 
+
+ .nav-items>ul{
+    list-style-type: none;
+    display:flex;
+ }
+
+ .nav-items>ul>li{
+    padding:20px;
+ }
+
+.header{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin:10px;
+    border: 1px solid black;
 }

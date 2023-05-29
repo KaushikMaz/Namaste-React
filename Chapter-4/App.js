@@ -1,10 +1,8 @@
 import React from "react";
-import ReactDOM from"react-dom/client";
-export default AppLayout;
-
+import FoodLogo from "./Images/FoodLogo.jpg"
 const Logo=()=>{
     return(
-        <img alt ="Food Logo" className="Logo" src="/Images/FoodLogo.jpg"/>
+        <img alt ="Food Logo" className="Logo" src={FoodLogo}/>
 
     )
 }
@@ -34,3 +32,4 @@ const AppLayout=()=>{
     
  
 }
+export default AppLayout;

@@ -13,6 +13,7 @@
  .nav-items>ul{
     list-style-type: none;
     display:flex;
+    cursor: pointer;
  }
 
  .nav-items>ul>li{
@@ -31,6 +32,19 @@
 .restaurantCard{
     display:flex;
     flex-wrap: wrap;
-    border: 1px solid black;
     
+    
+}
+
+.card{
+width:350px;
+border:1px solid black;
+margin:10px;
+border-radius: 10px;
+cursor: pointer;
+}
+
+.card>img{
+    border-radius: 10px;
+    width:100%;
 }

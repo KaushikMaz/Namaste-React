@@ -1,5 +1,5 @@
 import React from "react"
-import FoodLogo from "./Images/FoodLogo.jpg"
+import FoodLogo from "../Images/FoodLogo.jpg"
 const Logo=()=>{
     return(
         <img alt ="Food Logo" className="Logo" src={FoodLogo}/>

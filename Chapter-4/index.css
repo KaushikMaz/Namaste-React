@@ -27,3 +27,10 @@
     margin:10px;
     border: 1px solid black;
 }
+
+.restaurantCard{
+    display:flex;
+    flex-wrap: wrap;
+    border: 1px solid black;
+    
+}

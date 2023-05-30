@@ -13,11 +13,12 @@
  .nav-items>ul{
     list-style-type: none;
     display:flex;
-    cursor: pointer;
+    
  }
 
  .nav-items>ul>li{
     padding:20px;
+    cursor: pointer;
  }
 
 .header{

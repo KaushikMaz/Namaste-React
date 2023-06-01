@@ -3,8 +3,8 @@
   "version": "1.0.0",
   "description": "This is a react live course",
   "scripts": {
-    "start": "parcel",
-    "build": "parcel build",
+    "start": "parcel index.html",
+    "build": "parcel build index.html",
     "test": "jest"
   },
   "repository": {
@@ -18,13 +18,16 @@
   },
   "homepage": "https://github.com/KaushikMaz/Namaste-Dev#readme",
   "devDependencies": {
-    "@babel/core": "^7.20.12",
+    "@babel/core": "^7.22.1",
     "babel-plugin-transform-remove-console": "^6.9.4",
-    "parcel": "^2.8.2",
+    "parcel": "^2.9.1",
+    "parcel-bundler": "^1.12.5",
     "process": "^0.11.10"
   },
   "dependencies": {
+    "@parcel/utils": "^2.9.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0"
-  }
+  },
+  "main": "index.html"
 }

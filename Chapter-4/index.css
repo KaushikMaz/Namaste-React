@@ -1,0 +1,51 @@
+
+*{
+    box-sizing: border-box;
+    margin:0;
+}
+
+.Logo{
+    width:100px;
+    padding:5px;
+}
+ 
+
+ .nav-items>ul{
+    list-style-type: none;
+    display:flex;
+    
+ }
+
+ .nav-items>ul>li{
+    padding:20px;
+    cursor: pointer;
+ }
+
+.header{
+    display:flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    align-items: center;
+    margin:10px;
+    border: 1px solid black;
+}
+
+.restaurantCard{
+    display:flex;
+    flex-wrap: wrap;
+    
+    
+}
+
+.card{
+width:300px;
+border:1px solid black;
+margin:10px;
+border-radius: 10px;
+cursor: pointer;
+}
+
+.card>img{
+    border-radius: 10px;
+    width:100%;
+}

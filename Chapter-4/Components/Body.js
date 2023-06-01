@@ -17,7 +17,17 @@ const RestaurantCard=({name, cloudinaryImageId, cuisines,deliveryTime})=>{
 }
 
 const Body=()=>{
+    const [searchText, setSearchText]=React.useState("")
+    const changeHandler=(e)=>setSearchText(e.target.value)
+
+
     return(
+        <>
+        <div className="searchContainer">
+            <input type="text" placeholder="Enter Your search" className="searchInput" value={searchText} onChange={changeHandler}/>
+            <button>Search</button>
+
+        </div>
         <div className="restaurantCard">
             {ResList.map(restaurant=>{
                 return(<RestaurantCard{...restaurant.data} key={restaurant?.data?.id}/>)
@@ -28,6 +38,7 @@ const Body=()=>{
             // <RestaurantCard {...ResList[3].data}/>
             // <RestaurantCard {...ResList[4].data}/>
         </div>
+        </>
     )
 }
 

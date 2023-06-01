@@ -18,25 +18,37 @@ const RestaurantCard=({name, cloudinaryImageId, cuisines,deliveryTime})=>{
 
 const Body=()=>{
     const [searchText, setSearchText]=React.useState("")
+    const [RestaurantList, setRestaurantList]=React.useState(ResList)
     const changeHandler=(e)=>setSearchText(e.target.value)
 
+    const filterData=(searchText,RestaurantList)=>{
+        return (RestaurantList.filter(RList=>{
+            return RList.data.name.includes(searchText)
+        }))
+    }
 
+    const filterSearch=()=>{ 
+        const data=filterData(searchText,RestaurantList)
+        return setRestaurantList(data)
+    }
+
+    
     return(
         <>
         <div className="searchContainer">
             <input type="text" placeholder="Enter Your search" className="searchInput" value={searchText} onChange={changeHandler}/>
-            <button>Search</button>
+            <button onClick={filterSearch}>Search</button>
 
         </div>
         <div className="restaurantCard">
-            {ResList.map(restaurant=>{
-                return(<RestaurantCard{...restaurant.data} key={restaurant?.data?.id}/>)
+            {RestaurantList.map(restaurant=>{
+                return(<RestaurantCard {...restaurant.data} key={restaurant?.data?.id}/>)
             })}
-            // <RestaurantCard {...ResList[0].data}/>
-            // <RestaurantCard {...ResList[1].data}/>
-            // <RestaurantCard {...ResList[2].data}/>
-            // <RestaurantCard {...ResList[3].data}/>
-            // <RestaurantCard {...ResList[4].data}/>
+            {/* <RestaurantCard {...ResList[0].data}/>
+            <RestaurantCard {...ResList[1].data}/>
+            <RestaurantCard {...ResList[2].data}/>
+            <RestaurantCard {...ResList[3].data}/>
+            <RestaurantCard {...ResList[4].data}/> */}
         </div>
         </>
     )

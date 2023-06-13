@@ -20,7 +20,7 @@ const Body=()=>{
     const [searchText, setSearchText]=React.useState("")
     const [RestaurantList, setRestaurantList]=React.useState(ResList)
     const changeHandler=(e)=>setSearchText(e.target.value)
-
+    
     const filterData=(searchText,RestaurantList)=>{
         return (RestaurantList.filter(RList=>{
             return RList.data.name.includes(searchText)

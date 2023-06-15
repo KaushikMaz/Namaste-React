@@ -20,7 +20,17 @@ const Body=()=>{
     const [searchText, setSearchText]=React.useState("")
     const [RestaurantList, setRestaurantList]=React.useState(ResList)
     const changeHandler=(e)=>setSearchText(e.target.value)
-    
+
+    React.useEffect(()=>{
+        getRestaurants()
+    },[])
+
+    async function getRestaurants(){
+        const data= await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING")
+        const json= await data.json()
+        setRestaurantList(json?.data?.cards[2]?.data?.data?.cards)
+    }
+
     const filterData=(searchText,RestaurantList)=>{
         return (RestaurantList.filter(RList=>{
             return RList.data.name.includes(searchText)

@@ -18,18 +18,30 @@ const RestaurantCard=({name, cloudinaryImageId, cuisines,deliveryTime})=>{
 
 const Body=()=>{
     const [searchText, setSearchText]=React.useState("")
-    const [RestaurantList, setRestaurantList]=React.useState(ResList)
+    const [filteredRestaurant, setfilteredRestaurant]=React.useState([])
+    const [allRestaurant, setAllRestaurant]= React.useState([])
     const changeHandler=(e)=>setSearchText(e.target.value)
 
-    const filterData=(searchText,RestaurantList)=>{
-        return (RestaurantList.filter(RList=>{
-            return RList.data.name.includes(searchText)
+    React.useEffect(()=>{
+        getRestaurants()
+    },[])
+
+    async function getRestaurants(){
+        const data= await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING")
+        const json= await data.json()
+        setfilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards)
+        setAllRestaurant(json?.data?.cards[2]?.data?.data?.cards)
+    }
+
+    const filterData=(searchText,Restaurant)=>{
+        return (Restaurant.filter(RList=>{
+            return RList?.data?.name?.toLowerCase()?.includes(searchText?.toLowerCase())
         }))
     }
 
     const filterSearch=()=>{ 
-        const data=filterData(searchText,RestaurantList)
-        return setRestaurantList(data)
+        const data=filterData(searchText,allRestaurant)
+        return setfilteredRestaurant(data)
     }
 
     
@@ -37,11 +49,11 @@ const Body=()=>{
         <>
         <div className="searchContainer">
             <input type="text" placeholder="Enter Your search" className="searchInput" value={searchText} onChange={changeHandler}/>
-            <button onClick={filterSearch}>Search</button>
+            <button onClick={filterSearch} className="searchButton">Search</button>
 
         </div>
         <div className="restaurantCard">
-            {RestaurantList.map(restaurant=>{
+            {filteredRestaurant.map(restaurant=>{
                 return(<RestaurantCard {...restaurant.data} key={restaurant?.data?.id}/>)
             })}
             {/* <RestaurantCard {...ResList[0].data}/>

@@ -18,7 +18,7 @@ const RestaurantCard=({name, cloudinaryImageId, cuisines,deliveryTime})=>{
 
 const Body=()=>{
     const [searchText, setSearchText]=React.useState("")
-    const [filteredRestaurant, setfilteredRestaurant]=React.useState(ResList)
+    const [filteredRestaurant, setfilteredRestaurant]=React.useState([])
     const [allRestaurant, setAllRestaurant]= React.useState([])
     const changeHandler=(e)=>setSearchText(e.target.value)
 
@@ -49,7 +49,7 @@ const Body=()=>{
         <>
         <div className="searchContainer">
             <input type="text" placeholder="Enter Your search" className="searchInput" value={searchText} onChange={changeHandler}/>
-            <button onClick={filterSearch}>Search</button>
+            <button onClick={filterSearch} className="searchButton">Search</button>
 
         </div>
         <div className="restaurantCard">

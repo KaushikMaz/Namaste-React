@@ -1,12 +1,13 @@
 import React from "react"
-import ResList from "../ResList"
+import { IMG_CDN_URL, Restaurants_API } from "./Constants"
+import {Link} from "react-router-dom"
 
 const RestaurantCard=({name, cloudinaryImageId, cuisines,deliveryTime})=>{
     
     return(
         
         <div className="card">
-            <img src={ "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId}/>
+            <img src={IMG_CDN_URL+cloudinaryImageId}/>
             <h1>{name}</h1>
             <h2>{cuisines.join(",")}</h2>
             <h3>Delivery Time:{deliveryTime} minutes</h3>
@@ -27,7 +28,7 @@ const Body=()=>{
     },[])
 
     async function getRestaurants(){
-        const data= await fetch("https://www.swiggy.com/dapi/restaurants/list/v5?lat=12.9351929&lng=77.62448069999999&page_type=DESKTOP_WEB_LISTING")
+        const data= await fetch(Restaurants_API)
         const json= await data.json()
         setfilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards)
         setAllRestaurant(json?.data?.cards[2]?.data?.data?.cards)
@@ -54,7 +55,7 @@ const Body=()=>{
         </div>
         <div className="restaurantCard">
             {filteredRestaurant.map(restaurant=>{
-                return(<RestaurantCard {...restaurant.data} key={restaurant?.data?.id}/>)
+                return(<Link to={"/restaurant/"+ restaurant.data.id} key={restaurant?.data?.id}><RestaurantCard {...restaurant.data} /></Link>)
             })}
             {/* <RestaurantCard {...ResList[0].data}/>
             <RestaurantCard {...ResList[1].data}/>

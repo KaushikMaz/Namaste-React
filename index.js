@@ -4,6 +4,8 @@
     import About from "./Chapter-4/Components/About"
     import Contact from "./Chapter-4/Components/Contact"
     import Error from "./Chapter-4/Components/Error";
+    import RestaurantMenu from "./Chapter-4/Components/RestaurantMenu";
+    import Body from "./Chapter-4/Components/Body";
     import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
     const appRouter=createBrowserRouter([{
@@ -15,9 +17,17 @@
                 path:"/about",
                 element:<About/>
                 },
+            {   path:"/",
+                element:<Body/>
+
+                },
             {
                 path:"/contact",
                 element:<Contact/>
+            },
+            {
+                path:"/restaurant/:resId",
+                element:<RestaurantMenu/>
             }
         ]
     }])

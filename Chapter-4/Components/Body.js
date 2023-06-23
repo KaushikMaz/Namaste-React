@@ -1,6 +1,7 @@
 import React from "react"
 import { IMG_CDN_URL, Restaurants_API } from "./Constants"
 import {Link} from "react-router-dom"
+import {filterData} from "./HelperFunctions"
 
 const RestaurantCard=({name, cloudinaryImageId, cuisines,deliveryTime})=>{
     
@@ -34,12 +35,7 @@ const Body=()=>{
         setAllRestaurant(json?.data?.cards[2]?.data?.data?.cards)
     }
 
-    const filterData=(searchText,Restaurant)=>{
-        return (Restaurant.filter(RList=>{
-            return RList?.data?.name?.toLowerCase()?.includes(searchText?.toLowerCase())
-        }))
-    }
-
+    
     const filterSearch=()=>{ 
         const data=filterData(searchText,allRestaurant)
         return setfilteredRestaurant(data)

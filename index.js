@@ -1,6 +1,24 @@
     import React,{createElement} from "react";
     import ReactDOM from "react-dom/client";
     import AppLayout from "./Chapter-4/App"
+    import About from "./Chapter-4/Components/About"
+    import Contact from "./Chapter-4/Components/Contact"
+    import { createBrowserRouter, RouterProvider } from "react-router-dom";
+
+    const appRouter=createBrowserRouter([{
+        path:"/",
+        element:<AppLayout/>,
+        children:[
+            {
+                path:"/about",
+                element:<About/>
+                },
+            {
+                path:"/contact",
+                element:<Contact/>
+            }
+        ]
+    }])
 
     // const root=document.getElementById("root")
     // const heading=document.createElement("h1");
@@ -52,5 +70,5 @@
 
 
 //         }
-rootNew.render(<AppLayout/>)
+rootNew.render(<RouterProvider router={appRouter}/>)
 

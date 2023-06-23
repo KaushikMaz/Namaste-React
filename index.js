@@ -3,11 +3,13 @@
     import AppLayout from "./Chapter-4/App"
     import About from "./Chapter-4/Components/About"
     import Contact from "./Chapter-4/Components/Contact"
+    import Error from "./Chapter-4/Components/Error";
     import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
     const appRouter=createBrowserRouter([{
         path:"/",
         element:<AppLayout/>,
+        errorElement:<Error/>,
         children:[
             {
                 path:"/about",

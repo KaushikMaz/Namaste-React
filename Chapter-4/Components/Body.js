@@ -1,12 +1,17 @@
 import React from "react"
-import ResList from "../ResList"
+import { IMG_CDN_URL, Restaurants_API } from "./Constants"
+import {Link} from "react-router-dom"
+import useFilter from "./useFilter"
+import useOnline from "./useOnline"
+
+
 
 const RestaurantCard=({name, cloudinaryImageId, cuisines,deliveryTime})=>{
     
     return(
         
         <div className="card">
-            <img src={ "https://res.cloudinary.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_508,h_320,c_fill/" + cloudinaryImageId}/>
+            <img src={IMG_CDN_URL+cloudinaryImageId}/>
             <h1>{name}</h1>
             <h2>{cuisines.join(",")}</h2>
             <h3>Delivery Time:{deliveryTime} minutes</h3>
@@ -16,33 +21,35 @@ const RestaurantCard=({name, cloudinaryImageId, cuisines,deliveryTime})=>{
     )
 }
 
+
+
 const Body=()=>{
     const [searchText, setSearchText]=React.useState("")
-    const [RestaurantList, setRestaurantList]=React.useState(ResList)
     const changeHandler=(e)=>setSearchText(e.target.value)
+    const [filterSearch,filteredRestaurant]= useFilter(searchText,Restaurants_API)
 
-    const filterData=(searchText,RestaurantList)=>{
-        return (RestaurantList.filter(RList=>{
-            return RList.data.name.includes(searchText)
-        }))
-    }
+    const isOnline=useOnline();
+if(!isOnline){
+    return(
+    <>
+        <h2>Oops!</h2>
+        <h2>Something is wrong</h2>
+        <h3>Please Check your Internet Connection</h3>
+    
+    </>)
 
-    const filterSearch=()=>{ 
-        const data=filterData(searchText,RestaurantList)
-        return setRestaurantList(data)
-    }
-
+}
     
     return(
         <>
         <div className="searchContainer">
             <input type="text" placeholder="Enter Your search" className="searchInput" value={searchText} onChange={changeHandler}/>
-            <button onClick={filterSearch}>Search</button>
+            <button onClick={filterSearch} className="searchButton">Search</button>
 
         </div>
         <div className="restaurantCard">
-            {RestaurantList.map(restaurant=>{
-                return(<RestaurantCard {...restaurant.data} key={restaurant?.data?.id}/>)
+            {filteredRestaurant.map(restaurant=>{
+                return(<Link to={"/restaurant/"+ restaurant.data.id} key={restaurant?.data?.id}><RestaurantCard {...restaurant.data} /></Link>)
             })}
             {/* <RestaurantCard {...ResList[0].data}/>
             <RestaurantCard {...ResList[1].data}/>

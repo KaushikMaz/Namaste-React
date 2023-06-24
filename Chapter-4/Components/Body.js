@@ -1,7 +1,9 @@
 import React from "react"
 import { IMG_CDN_URL, Restaurants_API } from "./Constants"
 import {Link} from "react-router-dom"
-import {filterData} from "./HelperFunctions"
+import useFilter from "./useFilter"
+// import {filterData} from "./HelperFunctions"
+
 
 const RestaurantCard=({name, cloudinaryImageId, cuisines,deliveryTime})=>{
     
@@ -20,27 +22,8 @@ const RestaurantCard=({name, cloudinaryImageId, cuisines,deliveryTime})=>{
 
 const Body=()=>{
     const [searchText, setSearchText]=React.useState("")
-    const [filteredRestaurant, setfilteredRestaurant]=React.useState([])
-    const [allRestaurant, setAllRestaurant]= React.useState([])
     const changeHandler=(e)=>setSearchText(e.target.value)
-
-    React.useEffect(()=>{
-        getRestaurants()
-    },[])
-
-    async function getRestaurants(){
-        const data= await fetch(Restaurants_API)
-        const json= await data.json()
-        setfilteredRestaurant(json?.data?.cards[2]?.data?.data?.cards)
-        setAllRestaurant(json?.data?.cards[2]?.data?.data?.cards)
-    }
-
-    
-    const filterSearch=()=>{ 
-        const data=filterData(searchText,allRestaurant)
-        return setfilteredRestaurant(data)
-    }
-
+    const [filterSearch,filteredRestaurant]= useFilter(searchText,Restaurants_API)
     
     return(
         <>

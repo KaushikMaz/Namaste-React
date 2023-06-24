@@ -2,7 +2,8 @@ import React from "react"
 import { IMG_CDN_URL, Restaurants_API } from "./Constants"
 import {Link} from "react-router-dom"
 import useFilter from "./useFilter"
-// import {filterData} from "./HelperFunctions"
+import useOnline from "./useOnline"
+
 
 
 const RestaurantCard=({name, cloudinaryImageId, cuisines,deliveryTime})=>{
@@ -20,10 +21,24 @@ const RestaurantCard=({name, cloudinaryImageId, cuisines,deliveryTime})=>{
     )
 }
 
+
+
 const Body=()=>{
     const [searchText, setSearchText]=React.useState("")
     const changeHandler=(e)=>setSearchText(e.target.value)
     const [filterSearch,filteredRestaurant]= useFilter(searchText,Restaurants_API)
+
+    const isOnline=useOnline();
+if(!isOnline){
+    return(
+    <>
+        <h2>Oops!</h2>
+        <h2>Something is wrong</h2>
+        <h3>Please Check your Internet Connection</h3>
+    
+    </>)
+
+}
     
     return(
         <>

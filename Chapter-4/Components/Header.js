@@ -1,10 +1,11 @@
 import React from "react"
 import FoodLogo from "../Images/FoodLogo.jpg"
-const Logo=()=>{
-    return(
-        <img alt ="Food Logo" className="Logo" src={FoodLogo}/>
+import {Link} from "react-router-dom"
 
-    )
+const Logo=()=>{
+    return <img alt ="Food Logo" className="Logo" src={FoodLogo}/>
+
+    
 }
 const Header=()=>{
     return(
@@ -12,9 +13,9 @@ const Header=()=>{
             <Logo/>
             <div className="nav-items">
                 <ul>
-                    <li>Home</li>
-                    <li>About</li>
-                    <li>Contact</li>
+                    <li><Link to="/"> Home</Link></li>
+                    <li><Link to="/about">About</Link></li>
+                    <li><Link to="/contact">Contact</Link></li>
                     <li>Cart</li>
                 </ul>
 

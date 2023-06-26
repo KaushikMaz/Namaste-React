@@ -6,12 +6,14 @@
     import Error from "./Chapter-4/Components/Error";
     import RestaurantMenu from "./Chapter-4/Components/RestaurantMenu";
     import Body from "./Chapter-4/Components/Body";
+    import Instamart from "./Chapter-4/Components/Instamart";
     import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
-    const Instamart=lazy(()=>import("./Chapter-4/Components/Instamart"))
+    // const Instamart=lazy(()=>import("./Chapter-4/Components/Instamart"))
+    // const Contact =lazy(()=> import("./Chapter-4/Components/Contact"))
     const appRouter=createBrowserRouter([{
         path:"/",
-        element:(<Suspense fallback={<h1>Loading.......</h1>}><AppLayout/></Suspense>),
+        element:<AppLayout/>,
         errorElement:<Error/>,
         children:[
             {
@@ -31,7 +33,7 @@
                 element:<RestaurantMenu/>
             },{
                 path:"/instamart",
-                element:(<Suspense fallback={<h1>Loading....</h1>}><Instamart/></Suspense>)
+                element:(<Suspense fallback={<h1>Loading...</h1>}><Instamart/></Suspense>)
             }
         ]
     }])

@@ -9,7 +9,7 @@ class About extends React.Component{
         return(
             <>
             <h2>This is the About Us Page</h2>
-            <UserContext.Consumer>{(value)=><h2>{value.name}-{value.status}</h2>}</UserContext.Consumer>
+            <UserContext.Consumer>{(user)=><h2>{user.name}-{user.email}</h2>}</UserContext.Consumer>
             </>
         )
     }

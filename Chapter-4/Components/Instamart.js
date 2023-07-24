@@ -16,6 +16,7 @@ const Section=({title, description, isVisible, setIsVisible})=>{
 
 const Instamart=()=>{
     const[visibleSection,setVisibleSection]=useState("about")
+    
     const toggle = (section) => {
         if (visibleSection === section) {
           setVisibleSection("");

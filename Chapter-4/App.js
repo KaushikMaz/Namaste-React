@@ -1,20 +1,22 @@
 import React from "react";
 import Header from "./Components/Header"
 import { Outlet } from "react-router-dom";
-import UserContext from "./Components/userContext"
+// import UserContext from "./Components/userContext"
+import {Provider} from "react-redux";
+import store from "./Components/store";
 
 
 
 const AppLayout=()=>{
-    const [user,setUser]=React.useState({
-        name:"Kaushik Mazumdar",
-        email:"support@gmail.com"
-    })
+    // const [user,setUser]=React.useState({
+    //     name:"Kaushik Mazumdar",
+    //     email:"support@gmail.com"
+    // })
     return(
-        <>
-        <Header/>
-        <Outlet/>
-        </>
+        <Provider store={store}>
+            <Header/>
+            <Outlet/>
+        </Provider>
     )
     
  

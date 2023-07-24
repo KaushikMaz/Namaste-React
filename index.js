@@ -7,6 +7,7 @@
     import RestaurantMenu from "./Chapter-4/Components/RestaurantMenu";
     import Body from "./Chapter-4/Components/Body";
     import Instamart from "./Chapter-4/Components/Instamart";
+    import Cart from "./Chapter-4/Components/Cart";
     import { createBrowserRouter, RouterProvider } from "react-router-dom";
 
     // const Instamart=lazy(()=>import("./Chapter-4/Components/Instamart"))
@@ -34,6 +35,9 @@
             },{
                 path:"/instamart",
                 element:(<Suspense fallback={<h1>Loading...</h1>}><Instamart/></Suspense>)
+            },{
+                path:"/cart",
+                element:<Cart/>
             }
         ]
     }])
@@ -42,7 +46,6 @@
     // const heading=document.createElement("h1");
     // heading.innerHTML="Namaste React"
     // root.appendChild(heading)
-
 
     // const headingNew=createElement("h1",{},"Namaste Akshay Saini")
     // const heading2=createElement("h2",{},"Namaste Sreenu Saini")
@@ -70,7 +73,6 @@
     // React Element
 //    const Title=()=> <h1 id="title" key="h2">Food Villa</h1> 
    
-
 //    React component
 
 // const AppLayout=()=>{
@@ -83,10 +85,5 @@
 //                 </ul>
 //             </div>
 //         </div>)
-
-
-
-
 //         }
 rootNew.render(<RouterProvider router={appRouter}/>)
-

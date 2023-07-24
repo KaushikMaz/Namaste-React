@@ -26,11 +26,14 @@
   },
   "dependencies": {
     "@parcel/utils": "^2.9.1",
+    "@reduxjs/toolkit": "^1.9.5",
     "caniuse-lite": "^1.0.30001502",
+    "eslint-plugin-react-hooks": "^4.6.0",
     "re": "^0.1.4",
     "rea": "0.0.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
+    "react-redux": "^8.1.1",
     "react-router-dom": "^6.13.0"
   },
   "main": "index.html"
